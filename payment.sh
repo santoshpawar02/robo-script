@@ -1,5 +1,5 @@
 dnf install python3 gcc python3-devel -y
-
+cp -r payment.service /etc/systemd/system/payment.service
 useradd roboshop
 
 mkdir /app 
@@ -11,7 +11,7 @@ unzip /tmp/payment.zip
 cd /app 
 pip3 install -r requirements.txt
 
-cp -r payment.service /etc/systemd/system/payment.service
+
 systemctl daemon-reload
 
 systemctl enable payment 

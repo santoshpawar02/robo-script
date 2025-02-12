@@ -1,5 +1,6 @@
 dnf install maven -y
 useradd roboshop
+cp -r shipping.service /etc/systemd/system/shipping.service
 
 mkdir /app 
 
@@ -11,7 +12,7 @@ cd /app
 mvn clean package 
 mv target/shipping-1.0.jar shipping.jar 
 
-cp -r shipping.service /etc/systemd/system/shipping.service
+
 systemctl daemon-reload
 
 systemctl enable shipping 
